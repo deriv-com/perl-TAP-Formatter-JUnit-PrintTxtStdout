@@ -13,9 +13,9 @@ jobs:
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4
     - name: Set up Perl environment
       run: |
-        apt-get update
-        apt-get install -y perl
-        apt-get install -y cpanminus
+        sudo apt-get update
+        sudo apt-get install -y perl
+        sudo apt-get install -y cpanminus
     - name: Install dzil
       run: cpanm --notest Dist::Zilla Dist::Zilla::App::Command::cover App::cpm Devel::Cover::Report::Coveralls 
     - name: Install dzil author deps
