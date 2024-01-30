@@ -17,11 +17,11 @@ jobs:
         sudo apt-get install -y perl
         sudo apt-get install -y cpanminus
     - name: Install dzil
-      run: cpanm --notest Dist::Zilla Dist::Zilla::App::Command::cover App::cpm Devel::Cover::Report::Coveralls 
+      run: sudo cpanm --notest Dist::Zilla Dist::Zilla::App::Command::cover App::cpm Devel::Cover::Report::Coveralls 
     - name: Install dzil author deps
-      run: cpm install --show-build-log-on-failure -w 2 --mirror=http://cpan.cpantesters.org/ -g $(dzil authordeps --missing)
+      run: sudo cpm install --show-build-log-on-failure -w 2 --mirror=http://cpan.cpantesters.org/ -g $(dzil authordeps --missing)
     - name: Install distribution deps
-      run: cpm install --show-build-log-on-failure -w 2 --mirror=http://cpan.cpantesters.org/ -g $(dzil listdeps --author --missing)
+      run: sudo cpm install --show-build-log-on-failure -w 2 --mirror=http://cpan.cpantesters.org/ -g $(dzil listdeps --author --missing)
     - name: Run smoke test
       run: dzil smoke --release --author
     - name: Run coverage test
