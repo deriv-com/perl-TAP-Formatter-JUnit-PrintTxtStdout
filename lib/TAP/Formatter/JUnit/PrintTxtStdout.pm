@@ -7,7 +7,7 @@ use Moose;
 use Path::Tiny;
 extends qw(TAP::Formatter::JUnit);
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 =head1 NAME
 
